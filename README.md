@@ -115,3 +115,8 @@ This README provides a reference guide to determine the mobile network based on 
 | 0943   | Sun Cellular   |
 | 0944   | Sun Cellular   |
 
+## Support
+
+If you find my work helpful and want to support me, consider making a donation. Your contribution will help me continue working on open-source projects.
+
+**Bitcoin Address: `36ALguYpTgFF3RztL4h2uFb3cRMzQALAcm`**
