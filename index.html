@@ -55,6 +55,7 @@
             border: 1px solid #ddd;
             width: 100%;
             box-sizing: border-box;
+            max-width: 250px;
         }
 
         button {
@@ -78,6 +79,10 @@
             font-size: 18px;
             color: #000000;
         }
+
+        .error {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -86,6 +91,7 @@
         <form id="simForm">
             <div class="form-group">
                 <input type="text" id="phoneNumber" placeholder="Enter phone number (09xx)" required>
+                <div id="error" class="error"></div>
             </div>
             <button type="submit">Check ISP</button>
         </form>
@@ -182,10 +188,28 @@
             '0944': 'Sun Cellular'
         };
 
+        document.getElementById('phoneNumber').addEventListener('input', function () {
+            const input = this.value.replace(/\D/g, '');
+            if (input.length > 11) {
+                this.value = input.slice(0, 11);
+            } else {
+                this.value = input;
+            }
+        });
+
         document.getElementById('simForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            const phoneNumber = document.getElementById('phoneNumber').value.replace(/\D/g, '');
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const errorDiv = document.getElementById('error');
             let found = false;
+
+            if (phoneNumber.length !== 11) {
+                errorDiv.textContent = 'Phone number must be exactly 11 digits long.';
+                document.getElementById('result').innerHTML = '';
+                return;
+            } else {
+                errorDiv.textContent = '';
+            }
 
             for (const prefix in prefixes) {
                 if (phoneNumber.startsWith(prefix)) {
