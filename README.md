@@ -7,6 +7,8 @@
 
 This README provides a reference guide to determine the mobile network based on the prefix of a phone number in the Philippines. It includes prefixes for major telecom operators such as Globe Telecom, Smart Communications (including Talk N Text), DITO Telecommunity, and Sun Cellular.
 
+# LINK: [sim_search](https://0xbitx.github.io/PH_Mobile_Number_Prefixes/)
+
 ## Globe Numbers Prefix
 
 | Mobile Number Prefix | Network                               |
